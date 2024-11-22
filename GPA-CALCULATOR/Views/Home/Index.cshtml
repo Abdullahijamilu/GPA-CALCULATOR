@@ -1,0 +1,53 @@
+﻿<script>
+    function validateForm() {
+        // Get all subject input fields
+        const subjects = document.getElementsByName("subject");
+
+        // Loop through each subject input to check if it's empty
+        for (let i = 0; i < subjects.count; i++) {
+            if (subjects[i].value.trim() === "") {
+                alert("Please enter a subject in all fields.");
+                return false; // Prevent form submission
+            }
+        }
+        return true; // Allow form submission
+    }
+</script>
+
+
+<form asp-action="CalculateGPA" method="post">
+  
+        <div>
+            <input type="text" name="subject[0]" placeholder="Enter Subject" />
+            <input type="number" name="creditUnit[0]" placeholder="Enter Credit Unit" />
+            <select name="gradePoint[0]">
+                <option value="5">A</option>
+                <option value="4">B</option>
+                <option value="3">C</option>
+                <option value="2">D</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="text" name="subject[1]" placeholder="Enter Subject" />
+            <input type="number" name="creditUnit[1]" placeholder="Enter Credit Unit" />
+            <select name="gradePoint[1]">
+                <option value="5">A</option>
+                <option value="4">B</option>
+                <option value="3">C</option>
+                <option value="2">D</option>
+            </select>
+        </div>
+        <div>
+            <input type="text" name="subject[2]" placeholder="Enter Subject" />
+            <input type="number" name="creditUnit[2]" placeholder="Enter Credit Unit" />
+            <select name="gradePoint[2]">
+                <option value="5">A</option>
+                <option value="4">B</option>
+                <option value="3">C</option>
+                <option value="2">D</option>
+            </select>
+        </div>
+        <button type="submit">Calculate GPA</button>  
+    
+</form>
